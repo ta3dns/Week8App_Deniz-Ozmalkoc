@@ -71,6 +71,8 @@ public class MainActivity extends AppCompatActivity {
         output.setText(String.valueOf(result));
     }
 
+    // Test Commit Message
+
 
     public void multFunction(View view){
         firstNumberInt = Integer.parseInt(inputFirstNumber.getText().toString());
