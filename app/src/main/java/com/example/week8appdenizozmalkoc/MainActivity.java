@@ -18,11 +18,11 @@ public class MainActivity extends AppCompatActivity {
     private EditText inputFirstNumber;
     private EditText inputSecondNumber;
     private TextView output;
-    private int firstNumberInt;
-    private int secondNumberInt;
-    private float floatForDivision;
+    private float firstNumberInt;
+    private float secondNumberInt;
 
-    private int result;
+
+    private float result;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,71 +40,81 @@ public class MainActivity extends AppCompatActivity {
         inputSecondNumber = findViewById(R.id.inputSecondNumber);
         output = findViewById(R.id.outputView);
 
-
     }
 
+
+
+
     public void sumFunction(View view){
-        firstNumberInt = Integer.parseInt(inputFirstNumber.getText().toString());
-        secondNumberInt = Integer.parseInt(inputSecondNumber.getText().toString());
-        System.out.println("First Number: " + firstNumberInt);
-        System.out.println("Second Number: " + secondNumberInt);
+        try {
+            firstNumberInt = Float.parseFloat(inputFirstNumber.getText().toString());
+            secondNumberInt = Float.parseFloat(inputSecondNumber.getText().toString());
+            System.out.println("First Number: " + firstNumberInt);
+            System.out.println("Second Number: " + secondNumberInt);
 
 
-        result = firstNumberInt + secondNumberInt;
+            result = firstNumberInt + secondNumberInt;
 
-        System.out.println("Sum: " + result);
+            System.out.println("Sum: " + result);
 
-        output.setText(String.valueOf(result));
+            output.setText(String.valueOf(result));
+        } catch (Exception e){
+            Toast.makeText(this, "Please enter a valid number", Toast.LENGTH_LONG).show();
+        }
     }
 
     public void subFunction(View view){
-        firstNumberInt = Integer.parseInt(inputFirstNumber.getText().toString());
-        secondNumberInt = Integer.parseInt(inputSecondNumber.getText().toString());
-        System.out.println("First Number: " + firstNumberInt);
-        System.out.println("Second Number: " + secondNumberInt);
+        try {
 
+            firstNumberInt = Float.parseFloat(inputFirstNumber.getText().toString());
+            secondNumberInt = Float.parseFloat(inputSecondNumber.getText().toString());
+            System.out.println("First Number: " + firstNumberInt);
+            System.out.println("Second Number: " + secondNumberInt);
 
-        result = firstNumberInt - secondNumberInt;
+            result = firstNumberInt - secondNumberInt;
+            System.out.println("Subtracted Value: " + result);
+            output.setText(String.valueOf(result));
 
-        System.out.println("Subtracted Value: " + result);
-
-        output.setText(String.valueOf(result));
+        } catch (Exception e){
+            Toast.makeText(this, "Please enter a valid number", Toast.LENGTH_LONG).show();
+        }
     }
 
-    // Test Commit Message
-
-
     public void multFunction(View view){
-        firstNumberInt = Integer.parseInt(inputFirstNumber.getText().toString());
-        secondNumberInt = Integer.parseInt(inputSecondNumber.getText().toString());
-        System.out.println("First Number: " + firstNumberInt);
-        System.out.println("Second Number: " + secondNumberInt);
+        try {
 
+            firstNumberInt = Float.parseFloat(inputFirstNumber.getText().toString());
+            secondNumberInt = Float.parseFloat(inputSecondNumber.getText().toString());
+            System.out.println("First Number: " + firstNumberInt);
+            System.out.println("Second Number: " + secondNumberInt);
 
-        result = firstNumberInt * secondNumberInt;
-
-        System.out.println("Product: " + result);
-
-        output.setText(String.valueOf(result));
+            result = firstNumberInt * secondNumberInt;
+            System.out.println("Product: " + result);
+            output.setText(String.valueOf(result));
+        } catch (Exception e){
+            Toast.makeText(this, "Please enter a valid number", Toast.LENGTH_LONG).show();
+        }
     }
 
     public void divFunction(View view){
-        firstNumberInt = Integer.parseInt(inputFirstNumber.getText().toString());
-        secondNumberInt = Integer.parseInt(inputSecondNumber.getText().toString());
-        System.out.println("First Number: " + firstNumberInt);
-        System.out.println("Second Number: " + secondNumberInt);
+        try {
 
-        if (secondNumberInt == 0){
-            Toast.makeText(this, "Cannot divide by zero", Toast.LENGTH_LONG).show();
-        } else {
-            floatForDivision = (float) firstNumberInt / (float) secondNumberInt;
+            firstNumberInt = Float.parseFloat(inputFirstNumber.getText().toString());
+            secondNumberInt = Float.parseFloat(inputSecondNumber.getText().toString());
+            System.out.println("First Number: " + firstNumberInt);
+            System.out.println("Second Number: " + secondNumberInt);
 
-            System.out.println("Division Value: " + floatForDivision);
-            output.setText(String.valueOf(floatForDivision));
+            if (secondNumberInt == 0) {
+                Toast.makeText(this, "Cannot divide by zero", Toast.LENGTH_LONG).show();
+            } else {
+                result = firstNumberInt / secondNumberInt;
+
+                System.out.println("Division Value: " + result);
+                output.setText(String.valueOf(result));
+            }
+        } catch (Exception e){
+            Toast.makeText(this, "Please enter a valid number", Toast.LENGTH_LONG).show();
         }
-
-
-
     }
 
 
