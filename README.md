@@ -1,6 +1,7 @@
-Deniz Özmalkoc
+# Android app using java that performs basic arithmetic operations on two numbers.
 
-OOP Week 8 Task
-09.03.2025
+## Deniz Özmalkoc | OOP Week 8 Task | 09.03.2025 | Lappeenranta
 
- Android app using java that performs basic arithmetic operations on two numbers.
+
+
+![alt text](https://github.com/ta3dns/Week8App_Deniz-Ozmalkoc/blob/master/Screenshot.png "Screenshot")
